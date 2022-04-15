@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+        int Adjancy_matrix[20][20];
+        
+        void Create_Edge(int i , int j)
+        {
+            Adjancy_matrix[i][j]=1;
+            Adjancy_matrix[j][i]=1;
+        }
+        void Display(int Vertex)
+        {
+          
+            for(int i=0;i<Vertex;i++)
+            {
+                cout<<"[";
+                for(int j=0;j<Vertex;j++)
+                {
+                    cout<<Adjancy_matrix[i][j]<<" ";
+                }
+                    cout<<"]"<<"\n";
+            }
+                   
+        }
+
+
+int main(){
+    int vertex;
+    int r,c;
+    cout<<"enter the number of vertices"<<endl;
+    cin>>vertex;
+    cout<<"enter the edge"<<endl;
+    for(int i=0;i<vertex+1;i++)
+    { cin>>r>>c;
+      Create_Edge(r,c);
+
+    }
+    Display(vertex);
+    
+    return 0;
+}
